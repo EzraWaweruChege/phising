@@ -2,7 +2,7 @@ const SUPABASE_URL =
 'https://tzygochlibduxubsblzd.supabase.co/rest/v1/';
 
 const SUPABASE_KEY =
-'YOUR_ANON_KEY';
+'sb_publishable_GVnQsJLt8IzlyOUAL48Kmg_kdLxPzxH';
 
 const client =
 supabase.createClient(
