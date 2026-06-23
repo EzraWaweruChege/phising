@@ -1,5 +1,5 @@
 const SUPABASE_URL =
-'YOUR_PROJECT_URL';
+'https://tzygochlibduxubsblzd.supabase.co/rest/v1/';
 
 const SUPABASE_KEY =
 'YOUR_ANON_KEY';
