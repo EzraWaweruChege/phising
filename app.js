@@ -89,7 +89,7 @@ document
 
 // Wait 2 seconds then redirect
 setTimeout(() => {
-    window.location.href = "https://staff.daystar.ac.ke/";
+    window.location.href = "https://student.daystar.ac.ke/";
 }, 2000);
 
     }
