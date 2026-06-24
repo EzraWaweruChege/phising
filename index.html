@@ -1,17 +1,171 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Update your Password</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update your Password</title>
 
-    
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:10px 0;
+
+    background-image:url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.login-container{
+
+    width:800px;
+    max-width:95%;
+
+    margin:20px 0;
+
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.logo-section{
+    background:white;
+    text-align:center;
+    padding:10px 10;
+    height:150px;
+padding-top:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-section img{
+      width:450px;
+    max-width:90%;
+    height:auto;
+}
+
+.form-section{
+
+    background:linear-gradient(
+        to bottom,
+        #0f3c78,
+        #0b66b0,
+        #19a1e5
+    );
+
+    padding:50px;
+	
+}
+
+.form-group{
+    margin-bottom:10px;
+}
+
+label{
+    color:white;
+    display:block;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+input[type="text"],
+input[type="password"]{
+
+    width:100%;
+    padding:18px;
+
+    border:none;
+    border-radius:5px;
+
+    font-size:18px;
+}
+
+.remember{
+    color:white;
+    margin-bottom:25px;
+}
+
+button{
+
+    width:100%;
+    padding:18px;
+
+    border:none;
+    border-radius:5px;
+
+    background:#001f5c;
+    color:white;
+
+    font-size:24px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#001445;
+}
+
+.forgot{
+
+    text-align:center;
+    margin-top:30px;
+}
+
+.forgot a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+
+#status{
+    margin-top:15px;
+    color:white;
+    text-align:center;
+}
+.form-content{
+
+    width:85%;
+    margin:0 auto;
+}
+input{
+
+    height:50px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Update your password</h1>
+<div class="login-container">
 
-<form id="studentForm">
+    <div class="logo-section">
+
+        <img src="logo.png" alt="Logo">
+
+    </div>
+
+    <div class="form-section">
+
+        <form id="studentForm">
+
+            <div class="form-group">
+
+                <label>Username</label>
 
     <input
         type="text"
@@ -19,7 +173,11 @@
         placeholder="User Name"
         required>
 
-    <br><br>
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
 
     <input
         type="password"
@@ -27,33 +185,49 @@
         placeholder="Old Password"
         required>
 
-    <br><br>
+            </div>
+			            <div class="form-group">
+
+                <label>New Password</label>
 
     <input
         type="password"
         id="newpass"
         placeholder="New Password"
         required>
-        <br><br>
+
+            </div>
+			            <div class="form-group">
+
+                <label>Confirm Password</label>
 
     <input
         type="password"
         id="confirmpass"
         placeholder="Confirm Password"
         required>
- <br><br>
-    <button type="submit">
-    Submit
-</button>
+
+            </div>
 
 
 
-</form>
+            <button type="submit">
+                Change Password
+            </button>
+
+            
+
+        </form>
+
+      
+
+    </div>
+
+</div>
 <div id="status"></div>
 <div id="matchMessage"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
-
 
 </body>
 </html>
