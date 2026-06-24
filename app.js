@@ -68,7 +68,7 @@ document
         }
 
    status.innerHTML =
-"<span style='color:green;font-weight:bold;'>Password updated successfully. Redirecting...</span>";
+"<span style='color:red;font-weight:bold;'>Ooops something went wrong! try again...</span>";
 
 document
 .getElementById("studentForm")
