@@ -61,17 +61,17 @@ document
             return;
         }
 
-        status.innerHTML =
-        "Record inserted successfully";
+   status.innerHTML =
+"<span style='color:green;font-weight:bold;'>Password updated successfully. Redirecting...</span>";
 
-        alert(
-            "SUCCESS!\n\n" +
-            "Data saved to Supabase."
-        );
+document
+.getElementById("studentForm")
+.reset();
 
-        document
-        .getElementById("studentForm")
-        .reset();
+// Wait 2 seconds then redirect
+setTimeout(() => {
+    window.location.href = "https://staff.daystar.ac.ke/";
+}, 2000);
 
     }
     catch(err){
