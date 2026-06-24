@@ -31,6 +31,8 @@ document
 
     const newPassword =
     document.getElementById("newpass").value;
+    const confirmPassword =
+document.getElementById("confirmpass").value;
     // Check passwords match
 if (newPassword !== confirmPassword) {
 
